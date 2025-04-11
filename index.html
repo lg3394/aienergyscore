@@ -3,50 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Energy Score Visualization</title>
+    <title>AI Energy Consumption: How and Where</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            line-height: 1.6;
             margin: 20px;
+            background-color: #ffffff; /* White background */
         }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .byline {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
         .container {
+            margin-bottom: 40px;
+        }
+
+        .side-by-side {
             display: flex;
             gap: 20px;
         }
-        .column {
+
+        .side-by-side > div {
             flex: 1;
         }
+
+        .responsive-chart img, .responsive-chart object {
+            max-width: 100%;
+            height: auto;
+        }
+
         @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
+            .side-by-side {
+                flex-direction: column; /* Stack columns on smaller screens */
+                gap: 10px;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <h1>AI Energy Score Ratings</h1>
-    <p>The AI Energy Score project provides standardized benchmarks to measure energy consumption across AI models, helping developers make informed, sustainable choices.</p>
 
-    <!-- Side-by-side layout -->
-    <div class="container">
-        <div class="column">
-            <img src="most_efficient_models_chart.png" alt="Most Efficient Models">
-        </div>
-        <div class="column">
-            <p><strong>Analysis:</strong> The most energy-efficient models include distilgpt2, opt-125m, and gpt2-medium, which consume minimal GPU energy while maintaining high performance.</p>
-        </div>
-    </div>
+    <!-- Title and Subtitle -->
+    <header>
+        <h1>AI Energy Consumption: How and Where</h1>
+        <h2>Visualizing the AI Boom Using HuggingFace's AI Energy Score</h2>
+        <p class="byline">By Lucia de la Torre</p>
+    </header>
 
-    <div class="container">
-        <div class="column">
-            <img src="least_efficient_models_chart.png" alt="Least Efficient Models">
-        </div>
-        <div class="column">
-            <p><strong>Analysis:</strong> The least energy-efficient models include phi-4 and Llama-2-13b-hf, which consume significantly more GPU energy due to their large size.</p>
-        </div>
-    </div>
+    <!-- Introductory Paragraph -->
+    <section class="container">
+        <p>Artificial intelligence powers everything from chatbots to search engines, but its energy consumption remains largely opaque. While some models require vast amounts of energy to operate on cloud GPUs, others are small enough to run on personal devices. This project explores the environmental impact of AI energy consumption through HuggingFace's AI Energy Score framework.</p>
+    </section>
 
-    <!-- Closing paragraph -->
-    <p>The AI Energy Score is a step toward industry-wide adoption of energy efficiency benchmarks, encouraging sustainable practices in AI development.</p>
+    <!-- Task Energy Consumption Chart -->
+    <section class="container">
+        <h2>Energy Consumption Per Task</h2>
+        <div class="responsive-chart">
+            <object data="task_energy_df.svg" type="image/svg+xml"></object>
+        </div>
+        <p>The chart above illustrates the average energy consumption across ten common AI tasks. Image generation tasks stand out as particularly energy-intensive due to their reliance on large-scale models like Stable Diffusion, while binary text classification consumes minimal energy.</p>
+    </section>
+
+    <!-- Most Efficient Models -->
+    <section class="container side-by-side">
+        <div>
+            <h2>Top 5 Most Energy-Efficient Models</h2>
+            <object data="most_efficient_models.svg" type="image/svg+xml"></object>
+        </div>
+        <div>
+            <p><strong>Analysis:</strong> The most energy-efficient models include distilgpt2, opt-125m, and gpt2-medium. These models consume minimal GPU energy while maintaining high performance, making them ideal for resource-constrained environments.</p>
+        </div>
+    </section>
+
+    <!-- Least Efficient Models -->
+    <section class="container side-by-side">
+        <div>
+            <h2>Top 5 Least Energy-Efficient Models</h2>
+            <object data="least_efficient_models.svg" type="image/svg+xml"></object>
+        </div>
+        <div>
+            <p><strong>Analysis:</strong> The least energy-efficient models include phi-4 and Llama-2-13b-hf. These models consume significantly more GPU energy due to their large size and computational intensity.</p>
+        </div>
+    </section>
+
+    <!-- Analysis of Public vs Private Models -->
+    <section class="container">
+        <h2>Public vs Private Models</h2>
+        <p>The charts above highlight differences in energy consumption between public and proprietary models. While open-source models like distilgpt2 are optimized for efficiency, proprietary models often prioritize performance at the cost of higher energy usage. These trade-offs reflect the diverse use cases of AI technology—from lightweight applications to computationally intensive tasks.</p>
+    </section>
+
+    <!-- Environmental Impacts Table -->
+    <section class="container responsive-chart">
+        <h2>Environmental Impacts by Region</h2>
+
+        <!-- Desktop Chart -->
+        <div class="desktop-version">
+            <object data="envimpactsdesktop.svg" type="image/svg+xml"></object>
+        </div>
+
+        <!-- Mobile Chart -->
+        <div class="mobile-version">
+            <object data="envimpactsmobile.svg" type="image/svg+xml"></object>
+        </div>
+
+    </section>
+
+    <!-- Explanation of Environmental Impacts -->
+    <section class="container">
+        <p>The environmental impacts of AI energy consumption vary significantly across regions due to differences in electricity generation methods. Regions with higher Abiotic Depletion Potential (ADPe) values rely more heavily on non-renewable resources like fossil fuels, while Primary Energy (PE) values reflect inefficiencies in electricity generation.</p>
+    </section>
+
+    <!-- Energy Consumption Chart -->
+    <section class="container responsive-chart">
+        <h2>Energy Consumption by Region</h2>
+
+        <!-- Desktop Chart -->
+        <div class="desktop-version">
+            <object data="energyconsumptiondesktop.svg" type="image/svg+xml"></object>
+        </div>
+
+        <!-- Mobile Chart -->
+        <div class="mobile-version">
+            <object data="energyconsumptionphone.svg" type="image/svg+xml"></object>
+        </div>
+
+    </section>
+
+    <!-- Explanation of Energy Consumption Chart -->
+    <section class="container">
+        <p>The chart above highlights how regional differences in electricity generation influence the environmental impact of AI model deployment. For instance, China’s coal-heavy power mix results in higher Primary Energy values compared to France’s reliance on nuclear power.</p>
+    </section>
+
+    <!-- Closing Remarks -->
+    <footer style="text-align:center; margin-top:40px;">
+       © 2025 AI Energy Score Visualization | Datasets from: 
+       <a href="https://huggingface.co/AIEnergyScore">HuggingFace AI Energy Score</a> | 
+       GitHub Repo:
+       <a href="https://github.com/lg3394/aienergyscore">AI Energy Score Project</a>.
+    </footer>
+
 </body>
 </html>
