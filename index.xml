@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Energy Score Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .column {
+            flex: 1;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>AI Energy Score Ratings</h1>
+    <p>The AI Energy Score project provides standardized benchmarks to measure energy consumption across AI models, helping developers make informed, sustainable choices.</p>
+
+    <!-- Side-by-side layout -->
+    <div class="container">
+        <div class="column">
+            <img src="most_efficient_models_chart.png" alt="Most Efficient Models">
+        </div>
+        <div class="column">
+            <p><strong>Analysis:</strong> The most energy-efficient models include distilgpt2, opt-125m, and gpt2-medium, which consume minimal GPU energy while maintaining high performance.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="column">
+            <img src="least_efficient_models_chart.png" alt="Least Efficient Models">
+        </div>
+        <div class="column">
+            <p><strong>Analysis:</strong> The least energy-efficient models include phi-4 and Llama-2-13b-hf, which consume significantly more GPU energy due to their large size.</p>
+        </div>
+    </div>
+
+    <!-- Closing paragraph -->
+    <p>The AI Energy Score is a step toward industry-wide adoption of energy efficiency benchmarks, encouraging sustainable practices in AI development.</p>
+</body>
+</html>
