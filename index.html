@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Energy Consumption: How and Where</title>
+    <title>AI Energy Consumption: The Costs and Impacts of the AI Boom</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            margin: 20px;
+            margin: 40px; /* Increased margins for better readability */
             background-color: #ffffff; /* White background */
         }
 
@@ -18,12 +18,12 @@
         }
 
         h1 {
-            font-size: 2em;
+            font-size: 2.5em;
             margin-bottom: 10px;
         }
 
         h2 {
-            font-size: 1.5em;
+            font-size: 1.8em;
             margin-top: 20px;
         }
 
@@ -51,6 +51,13 @@
             flex: 1;
         }
 
+        .side-by-side .text-box {
+            text-align: center; /* Centered text */
+            padding: 20px; /* Added padding for better layout */
+            border: 1px solid #ddd; /* Box around text */
+            background-color: #f9f9f9; /* Light background for contrast */
+        }
+
         .responsive-chart img, .responsive-chart object {
             max-width: 100%;
             height: auto;
@@ -69,20 +76,22 @@
 
     <!-- Title and Subtitle -->
     <header>
-        <h1>AI Energy Consumption: How and Where</h1>
-        <h2>Visualizing the AI Boom Using HuggingFace's AI Energy Score</h2>
+        <h1>AI Energy Consumption: The Costs and Impacts of the AI Boom</h1>
+        <h2>Visualizing AI's Environmental Footprint Using HuggingFace's AI Energy Score</h2>
         <p class="byline">By Lucia de la Torre</p>
     </header>
 
     <!-- Introductory Paragraph -->
     <section class="container">
-        <p>Artificial intelligence powers everything from chatbots to search engines, but its energy consumption remains largely opaque. While some models require vast amounts of energy to operate on cloud GPUs, others are small enough to run on personal devices. This project explores the environmental impact of AI energy consumption through HuggingFace's AI Energy Score framework.</p>
+        <p>Artificial intelligence is transforming industries, but its energy consumption is raising serious concerns. AI models require vast amounts of computational power to operate, often relying on energy-intensive data centers. This has led to growing scrutiny over the environmental impact of AI technologies, especially as global energy demand continues to rise.</p>
+        
+        <p>HuggingFace's AI Energy Score aims to address this issue by providing a standardized framework to measure and compare the energy efficiency of AI models. By testing hundreds of models across various tasks, HuggingFace hopes to guide developers and organizations toward more sustainable choices in AI deployment.</p>
     </section>
 
     <!-- Task Energy Consumption Chart -->
     <section class="container">
         <h2>Energy Consumption Per Task</h2>
-        <div class="responsive-chart">
+        <div class="responsive-chart" style="text-align:center;"> <!-- Centered chart -->
             <object data="task_energy_df.svg" type="image/svg+xml"></object>
         </div>
         <p>The chart above illustrates the average energy consumption across ten common AI tasks. Image generation tasks stand out as particularly energy-intensive due to their reliance on large-scale models like Stable Diffusion, while binary text classification consumes minimal energy.</p>
@@ -92,10 +101,12 @@
     <section class="container side-by-side">
         <div>
             <h2>Top 5 Most Energy-Efficient Models</h2>
-            <object data="most_efficient_models.png" type="image/svg+xml"></object>
+            <object data="most_efficient_models.svg" type="image/svg+xml"></object>
         </div>
-        <div>
-            <p><strong>Analysis:</strong> The most energy-efficient models include distilgpt2, opt-125m, and gpt2-medium. These models consume minimal GPU energy while maintaining high performance, making them ideal for resource-constrained environments.</p>
+        <div class="text-box">
+            <p><strong>Analysis:</strong> The most energy-efficient models include distilgpt2, opt-125m, and gpt2-medium. These models consume minimal GPU energy while maintaining high performance. Distilgpt2 is particularly noteworthy for its compact architecture, making it ideal for lightweight applications.</p>
+            
+            <p>These models demonstrate how optimization can reduce energy costs without sacrificing functionality—a crucial step toward sustainable AI development.</p>
         </div>
     </section>
 
@@ -105,15 +116,17 @@
             <h2>Top 5 Least Energy-Efficient Models</h2>
             <object data="least_efficient_models.svg" type="image/svg+xml"></object>
         </div>
-        <div>
+        <div class="text-box">
             <p><strong>Analysis:</strong> The least energy-efficient models include phi-4 and Llama-2-13b-hf. These models consume significantly more GPU energy due to their large size and computational intensity.</p>
+
+            <p>While these models excel at complex tasks like image generation or reasoning, their environmental impact is substantial. Developers must weigh these trade-offs when choosing models for specific applications.</p>
         </div>
     </section>
 
-    <!-- Analysis of Public vs Private Models -->
+    <!-- Analysis of Models -->
     <section class="container">
-        <h2>Public vs Private Models</h2>
-        <p>The charts above highlight differences in energy consumption between public and proprietary models. While open-source models like distilgpt2 are optimized for efficiency, proprietary models often prioritize performance at the cost of higher energy usage. These trade-offs reflect the diverse use cases of AI technology—from lightweight applications to computationally intensive tasks.</p>
+        <h2>What Do These Results Tell Us?</h2>
+        <p>The comparison between efficient and inefficient models highlights the diversity in AI technologies. Smaller models are optimized for efficiency and accessibility, while larger models prioritize performance at a higher energy cost. This raises questions about how organizations can balance functionality with sustainability in their AI strategies.</p>
     </section>
 
     <!-- Environmental Impacts Table -->
@@ -134,7 +147,9 @@
 
     <!-- Explanation of Environmental Impacts -->
     <section class="container">
-        <p>The environmental impacts of AI energy consumption vary significantly across regions due to differences in electricity generation methods. Regions with higher Abiotic Depletion Potential (ADPe) values rely more heavily on non-renewable resources like fossil fuels, while Primary Energy (PE) values reflect inefficiencies in electricity generation.</p>
+        <p><strong>Abiotic Depletion Potential (ADPe):</strong> This metric measures the depletion of non-renewable resources like minerals and metals during electricity production. The USA leads in ADPe due to its reliance on fossil fuels, while France ranks lowest thanks to its nuclear-powered grid.</p>
+
+        <p><strong>Primary Energy Consumption (PE):</strong> PE represents the total amount of energy required to produce one kilowatt-hour (kWh) of electricity. China has the highest PE value due to its coal-heavy power mix, while France benefits from more efficient nuclear energy production.</p>
     </section>
 
     <!-- Energy Consumption Chart -->
@@ -155,15 +170,20 @@
 
     <!-- Explanation of Energy Consumption Chart -->
     <section class="container">
-        <p>The chart above highlights how regional differences in electricity generation influence the environmental impact of AI model deployment. For instance, China’s coal-heavy power mix results in higher Primary Energy values compared to France’s reliance on nuclear power.</p>
+        <p>The chart above highlights regional differences in electricity generation methods and their environmental impacts. China’s coal-heavy power mix results in higher primary energy consumption compared to France’s reliance on nuclear power, which is more efficient and less resource-intensive.</p>
     </section>
 
     <!-- Closing Remarks -->
     <footer style="text-align:center; margin-top:40px;">
-       © 2025 AI Energy Score Visualization | Datasets from: 
-       <a href="https://huggingface.co/AIEnergyScore">HuggingFace AI Energy Score</a> | 
-       GitHub Repo:
+       HuggingFace's AI Energy Score provides a critical framework for understanding the environmental impact of artificial intelligence. By promoting transparency and encouraging sustainable practices, this initiative aims to guide developers toward more responsible choices in AI deployment.
+       
+       As AI continues to evolve, balancing innovation with sustainability will be essential for minimizing its environmental footprint.
+       
+       Datasets from:
+       <a href="https://huggingface.co/AIEnergyScore">HuggingFace AI Energy Score</a>. GitHub Repo:
        <a href="https://github.com/lg3394/aienergyscore">AI Energy Score Project</a>.
+       
+       Date Published: Friday, April 11, 2025
     </footer>
 
 </body>
