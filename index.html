@@ -8,7 +8,8 @@
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            margin: 40px; /* Increased margins for better readability */
+            margin: 20px auto; /* Centered content with smaller margins */
+            max-width: 1200px; /* Limit content width for readability */
             background-color: #ffffff; /* White background */
         }
 
@@ -69,6 +70,14 @@
                 gap: 10px;
                 text-align: center;
             }
+            
+            .desktop-version { display: none; }
+            .mobile-version { display: block; }
+        }
+
+        @media (min-width: 769px) {
+            .desktop-version { display: block; }
+            .mobile-version { display: none; }
         }
     </style>
 </head>
@@ -135,12 +144,12 @@
 
         <!-- Desktop Chart -->
         <div class="desktop-version">
-            <object data="envimpactsdesktop.svg" type="image/svg+xml"></object>
+            <object data="envimpactdesktop.svg" type="image/svg+xml"></object>
         </div>
 
         <!-- Mobile Chart -->
         <div class="mobile-version">
-            <object data="envimpactsmobile.svg" type="image/svg+xml"></object>
+            <object data="envimpactphone.svg" type="image/svg+xml"></object>
         </div>
 
     </section>
@@ -183,7 +192,7 @@
        <a href="https://huggingface.co/AIEnergyScore">HuggingFace AI Energy Score</a>. GitHub Repo:
        <a href="https://github.com/lg3394/aienergyscore">AI Energy Score Project</a>.
        
-       Date Published: Friday, April 11, 2025
+       Current date: Friday, April 11, 2025
     </footer>
 
 </body>
