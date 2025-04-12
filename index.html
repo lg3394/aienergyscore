@@ -52,13 +52,6 @@
             flex: 1;
         }
 
-        .side-by-side .text-box {
-            text-align: center; /* Centered text */
-            padding: 20px; /* Added padding for better layout */
-            border: 1px solid #ddd; /* Box around text */
-            background-color: #f9f9f9; /* Light background for contrast */
-        }
-
         .responsive-chart img, .responsive-chart object {
             max-width: 100%;
             height: auto;
@@ -79,6 +72,12 @@
             .desktop-version { display: block; }
             .mobile-version { display: none; }
         }
+
+        footer {
+            text-align: center;
+            color: #888; /* Grey font for footer */
+            margin-top: 40px;
+        }
     </style>
 </head>
 <body>
@@ -86,15 +85,15 @@
     <!-- Title and Subtitle -->
     <header>
         <h1>AI Energy Consumption: The Costs and Impacts of the AI Boom</h1>
-        <h2>Visualizing AI's Environmental Footprint Using HuggingFace's AI Energy Score</h2>
+        <h2>Visualizing the How and Where of AI's Environmental Footprint<br>Using HuggingFace's AI Energy Score</h2>
         <p class="byline">By Lucia de la Torre</p>
     </header>
 
     <!-- Introductory Paragraph -->
     <section class="container">
-        <p>Artificial intelligence is transforming industries, but its energy consumption is raising serious concerns. AI models require vast amounts of computational power to operate, often relying on energy-intensive data centers. This has led to growing scrutiny over the environmental impact of AI technologies, especially as global energy demand continues to rise.</p>
+        <p>Artificial intelligence is transforming industries and reshaping economies, but its energy consumption is raising serious concerns. AI models require vast amounts of computational power to operate, often relying on energy-intensive data centers that consume significant electricity. Not all AI tasks are created equal—some, like image generation, are far more energy-intensive than simpler tasks like text classification. Geographically, these impacts also vary depending on regional energy sources and infrastructure.</p>
         
-        <p>HuggingFace's AI Energy Score aims to address this issue by providing a standardized framework to measure and compare the energy efficiency of AI models. By testing hundreds of models across various tasks, HuggingFace hopes to guide developers and organizations toward more sustainable choices in AI deployment.</p>
+        <p>HuggingFace's AI Energy Score aims to provide clarity in this complex landscape by systematically testing hundreds of models across various tasks. By offering a standardized framework for measuring energy efficiency, it seeks to empower developers and policymakers to make informed decisions about sustainable AI deployment while considering the broader implications for energy systems worldwide.</p>
     </section>
 
     <!-- Task Energy Consumption Chart -->
@@ -103,7 +102,7 @@
         <div class="responsive-chart" style="text-align:center;"> <!-- Centered chart -->
             <object data="task_energy_df.svg" type="image/svg+xml"></object>
         </div>
-        <p>The chart above illustrates the average energy consumption across ten common AI tasks. Image generation tasks stand out as particularly energy-intensive due to their reliance on large-scale models like Stable Diffusion, while binary text classification consumes minimal energy.</p>
+        <p>The chart above illustrates the average energy consumption across ten common AI tasks. Image generation tasks stand out as particularly energy-intensive due to their reliance on large-scale models like Stable Diffusion, while binary text classification consumes minimal energy. These differences highlight the need for tailored approaches to optimizing AI energy use.</p>
     </section>
 
     <!-- Most Efficient Models -->
@@ -112,10 +111,13 @@
             <h2>Top 5 Most Energy-Efficient Models</h2>
             <object data="most_efficient_models.svg" type="image/svg+xml"></object>
         </div>
-        <div class="text-box">
-            <p><strong>Analysis:</strong> The most energy-efficient models include distilgpt2, opt-125m, and gpt2-medium. These models consume minimal GPU energy while maintaining high performance. Distilgpt2 is particularly noteworthy for its compact architecture, making it ideal for lightweight applications.</p>
+        <div class="text-box" style="text-align:center;">
+            <br>
+            <br>
+            <br>
+            <p>The most energy-efficient models include distilgpt2, opt-125m, and gpt2-medium. These models consume minimal GPU energy while maintaining high performance. Distilgpt2 is particularly noteworthy for its compact architecture, making it ideal for lightweight applications.</p>
             
-            <p>These models demonstrate how optimization can reduce energy costs without sacrificing functionality—a crucial step toward sustainable AI development.</p>
+            <p>These results demonstrate how optimization can reduce energy costs without sacrificing functionality—a crucial step toward sustainable AI development.</p>
         </div>
     </section>
 
@@ -124,9 +126,13 @@
         <div>
             <h2>Top 5 Least Energy-Efficient Models</h2>
             <object data="least_efficient_models.svg" type="image/svg+xml"></object>
+        </object>
         </div>
-        <div class="text-box">
-            <p><strong>Analysis:</strong> The least energy-efficient models include phi-4 and Llama-2-13b-hf. These models consume significantly more GPU energy due to their large size and computational intensity.</p>
+        <div class="text-box" style="text-align:center;">
+            <br>
+            <br>
+            <br>
+            <p>The least energy-efficient models include phi-4 and Llama-2-13b-hf. These models consume significantly more GPU energy due to their large size and computational intensity.</p>
 
             <p>While these models excel at complex tasks like image generation or reasoning, their environmental impact is substantial. Developers must weigh these trade-offs when choosing models for specific applications.</p>
         </div>
@@ -135,7 +141,7 @@
     <!-- Analysis of Models -->
     <section class="container">
         <h2>What Do These Results Tell Us?</h2>
-        <p>The comparison between efficient and inefficient models highlights the diversity in AI technologies. Smaller models are optimized for efficiency and accessibility, while larger models prioritize performance at a higher energy cost. This raises questions about how organizations can balance functionality with sustainability in their AI strategies.</p>
+        <p>The comparison between efficient and inefficient models highlights the diversity in AI technologies. Smaller models are optimized for efficiency and accessibility, while larger models prioritize performance at a higher energy cost. Policymakers in both tech and energy sectors should consider these intricacies when crafting regulations or frameworks for sustainable AI development.</p>
     </section>
 
     <!-- Environmental Impacts Table -->
@@ -183,11 +189,7 @@
     </section>
 
     <!-- Closing Remarks -->
-    <footer style="text-align:center; margin-top:40px;">
-       HuggingFace's AI Energy Score provides a critical framework for understanding the environmental impact of artificial intelligence. By promoting transparency and encouraging sustainable practices, this initiative aims to guide developers toward more responsible choices in AI deployment.
-       
-       As AI continues to evolve, balancing innovation with sustainability will be essential for minimizing its environmental footprint.
-       
+    <footer style="text-align:center;">
        Datasets from:
        <a href="https://huggingface.co/AIEnergyScore">HuggingFace AI Energy Score</a>. GitHub Repo:
        <a href="https://github.com/lg3394/aienergyscore">AI Energy Score Project</a>.
